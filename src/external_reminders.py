@@ -1,9 +1,10 @@
 """This module implements some Reminder classes that we should
 consider as "external", whose source we do not control.
 """
-from dateutil.parser import parse
 from collections.abc import Iterable
 from datetime import datetime
+from dateutil.parser import parse
+
 
 class DateTimeReminder(Iterable):
     """A reminder which has a specific date and time for being due"""
@@ -25,6 +26,7 @@ class MorningReminder(DateTimeReminder):
     """A reminder that is due at 9am"""
     def __init__(self, text: str, date: str):
         super().__init__(text, date, '9am')
+
 
 class EveningReminder(DateTimeReminder):
     """A reminder that is due at 8pm"""
